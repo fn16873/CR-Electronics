@@ -1,0 +1,71 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header{
+    background-color: #1a2e40; 
+    text-align: center;
+}
+
+nav{
+    float: left;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.celulares table {
+    border-collapse: separate; /* mantiene separación entre celdas */
+    border-spacing: 20px;      /* espacio entre columnas */
+}
+
+.celulares {
+    border: 2px solid #333;    /* borde alrededor de cada celda */
+    border-radius: 10px;       /* esquinas redondeadas */
+    padding: 15px;             /* espacio interno */
+    text-align: center;        /* centra el contenido */
+}
+
+.celulares tr{
+    text-align: center;
+    
+}
+
+
+.Codigo{
+    color: gray;
+    font-size: 15px;
+}
+
+nav ul li{
+    list-style: none;
+    margin-left: 75px;
+    padding: 25px 0;
+    float: left;
+    position: relative;
+    top: 100px;  
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+nav ul li a::before {
+    display:flow-root;
+    content: '' ;
+    width: 0%;
+    background:rgb(254, 254, 254);
+    height: 5px;
+    top: 50px;
+    position:absolute ;
+    transition: width 0.2s;
+ 
+}
+
+nav ul li a:hover::before{
+    width: 100%;
+}
