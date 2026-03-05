@@ -1,0 +1,86 @@
+/* inicio-sesion.css */
+/* estilo para la página de inicio de sesión */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+/* estilo para el cuerpo de la página */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+/* estilo para el contenedor del formulario de inicio de sesión */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+/* estilo para las etiquetas y los campos de entrada del formulario */
+.container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container button:hover {    
+    background-color: #0056b3;
+}   
+nav{
+    float: left;
+    width: 200px;
+    background-color: #333;
+    padding: 20px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {    
+    margin-bottom: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+nav ul li a:hover {
+    background-color: #575757;
+}
+main {
+    margin-left: 220px;
+    padding: 20px;
+}
+/* estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
