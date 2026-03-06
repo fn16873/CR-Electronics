@@ -1,4 +1,3 @@
-/* inicio-sesion.css */
 /* estilo para la página de inicio de sesión */
 * {
     box-sizing: border-box;
@@ -6,6 +5,7 @@
     padding: 0;
     font-family: Arial, sans-serif;
 }
+
 /* estilo para el cuerpo de la página */
 body {
     background-color: #f0f0f0;
@@ -13,6 +13,8 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
+
+/*La seccion de los datos el usuario*/
 section {
     display: flex;
     flex-direction: column;
@@ -21,6 +23,7 @@ section {
     height: 70vh;
 }
 
+/*Estilo para el ancabezado de la pagina*/
 header {
     background-color: #1a2e40; 
     text-align: center;
@@ -29,27 +32,31 @@ header {
 }
 
 /* estilo para el contenedor del formulario de inicio de sesión */
-.container {
+.cuenta {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
 }
+
 /* estilo para las etiquetas y los campos de entrada del formulario */
-.container h2 {
+.cuenta h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.container input {
+/*Estilo para las casillas de captura de datos*/
+.cuenta input {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-.container button {
+
+/*Estilo del boton*/
+.cuenta button {
     width: 100%;
     padding: 10px;
     background-color: #007BFF;
@@ -58,10 +65,11 @@ header {
     border-radius: 4px;
     cursor: pointer;
 }
-.container button:hover {    
+
+/*estilo para que el boton cambie de color cuando se presione*/
+.cuenta button:hover {    
     background-color: #0056b3;
 }
-
 
 /* estilo para el pie de página */
 footer {

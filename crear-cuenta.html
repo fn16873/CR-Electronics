@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="inicio-sesion.css">
 </head>
 <body>
+    <!--Se ingresa el encabezado de la pagina solo poniedo la imagen que lo puede dirigir al inicio de la pagina-->
     <header>
+        <!--Se importa la  clase logo-->
         <div class="logo">
             <a href="./index.html"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
         </div>
     </header>
+    <!--Se crea la secion para el inicio de sesion-->
     <section>
-        <div class="container">
+        <!--Se crea/inicia la clase con el div de cuenta-->
+        <div class="cuenta">
+            <!--Apartado del formulario-->
             <form action="crear-cuenta.html">
+
+                <!--Etiquetas de label (Poner texto arriba del input) junto a sus inputs para capturar los datos del usuario-->
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" required>
 
@@ -37,6 +44,7 @@
             </form>
         </div>
     </section>
+    <!--Etiqueta para el pie de pagina-->
     <footer>
         <p>&copy; 2026 CR Electronics. Todos los derechos reservados.</p>
     </footer>
