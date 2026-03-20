@@ -20,7 +20,7 @@
         }
 
         // Verificar si el correo electrónico ya está registrado
-        $sql = "SELECT * FROM usuarios WHERE email='$email'";
+        $sql = "SELECT * FROM usuario WHERE email='$email'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

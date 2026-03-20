@@ -20,7 +20,7 @@
         }
 
         // Verificar las credenciales del usuario
-        $sql = "SELECT * FROM usuarios WHERE email='$email'";
+        $sql = "SELECT * FROM usuario WHERE email='$email'";
         $result = $conn->query($sql);
 
         //contraseña_verify para comparar la contraseña ingresada con la contraseña encriptada almacenada en la base de datos
