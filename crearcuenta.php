@@ -33,7 +33,7 @@
             $contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
 
             // Insertar los datos en la tabla de usuarios
-            $sql = "INSERT INTO usuario (nombre, apellido, email, contrasena, telefono, direccion) VALUES ('$nombre', '$apellido', '$email', '$contrasena', '$numero', '$direccion')";
+            $sql = "INSERT INTO usuario (nombre, apellido, email, contrasena, direccion, telefono) VALUES ('$nombre', '$apellido', '$email', '$contrasena', '$direccion', '$numero')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Cuenta creada exitosamente";
