@@ -8,8 +8,11 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Obtener los datos del formulario
         $nombre = $_POST["nombre"];
+        $apellido = $_POST["apellido"];
         $email = $_POST["email"];
         $contrasena = $_POST["password"];
+        $numero = $_POST["telefono"];
+        $direccion = $_POST["direccion"];
 
         // Crear conexión a la base de datos
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -30,7 +33,7 @@
             $contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
 
             // Insertar los datos en la tabla de usuarios
-            $sql = "INSERT INTO usuarios (nombre, email, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
+            $sql = "INSERT INTO usuario (nombre, apellido, email, contrasena, telefono, direccion) VALUES ('$nombre', '$apellido', '$email', '$contrasena', '$numero', '$direccion')";
 
             if ($conn->query($sql) === TRUE) {
                 echo "Cuenta creada exitosamente";
