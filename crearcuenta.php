@@ -1,15 +1,15 @@
 <?php
     //vincular a la base de datos
-    $servername = "localhost:3306";
+    $servername = "localhost";
     $username = "root";
-    $password = "2408";
+    $password = "";
     $dbname = "crelectronics";
     // Código para crear una nueva cuenta de usuario
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Obtener los datos del formulario
         $nombre = $_POST["nombre"];
         $email = $_POST["email"];
-        $contrasena = $_POST["contrasena"];
+        $contrasena = $_POST["password"];
 
         // Crear conexión a la base de datos
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -19,17 +19,27 @@
             die("Conexión fallida: " . $conn->connect_error);
         }
 
-        // Insertar los datos en la tabla de usuarios
-        $sql = "INSERT INTO usuarios (nombre, email, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
+        // Verificar si el correo electrónico ya está registrado
+        $sql = "SELECT * FROM usuarios WHERE email='$email'";
+        $result = $conn->query($sql);
 
-        if ($conn->query($sql) === TRUE) {
-            echo "Cuenta creada exitosamente";
-            header("Location: login.php"); // Redirigir al usuario a la página de inicio de sesión
-            exit();
+        if ($result->num_rows > 0) {
+            echo "El correo electrónico ya está registrado.";
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
+            //encriptar la contraseña
+            $contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
 
+            // Insertar los datos en la tabla de usuarios
+            $sql = "INSERT INTO usuarios (nombre, email, contrasena) VALUES ('$nombre', '$email', '$contrasena')";
+
+            if ($conn->query($sql) === TRUE) {
+                echo "Cuenta creada exitosamente";
+                header("Location: login.php"); // Redirigir al usuario a la página de inicio de sesión
+                exit();
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+        }
         // Cerrar la conexión
         $conn->close();
     }
