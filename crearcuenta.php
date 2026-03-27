@@ -6,7 +6,6 @@
     header("Access-Control-Allow-Methods: POST, OPTIONS");
     header("Access-Control-Allow-Headers: Content-Type");
 
-
     // Código para crear una nueva cuenta de usuario
     if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
         // Manejar la solicitud OPTIONS (para CORS)
@@ -35,7 +34,7 @@
         // Obtener los datos del formulario
         $nombre = trim($_POST["nombre"]);
         $apellido = trim($_POST["apellido"]);
-        $email = trim($_POST["email"]);
+        $email = strtolower(trim($_POST["email"]));
         $contrasena = trim($_POST["password"]);
         $numero = trim($_POST["telefono"]);
         $direccion = trim($_POST["direccion"]);
@@ -62,7 +61,6 @@
 
     // Insertar los datos en la tabla de usuarios
     $sql = "INSERT INTO usuario (nombre, apellido, correo, contrasena, telefono, direccion) VALUES ('$nombre', '$apellido', '$email', '$contrasena', '$numero', '$direccion')";
-
 
     // Ejecutar la consulta y verificar si se realizó correctamente
     if ($conn->query($sql) === TRUE) {
