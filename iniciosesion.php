@@ -25,13 +25,15 @@
 
         //contraseña_verify para comparar la contraseña ingresada con la contraseña encriptada almacenada en la base de datos
         if ($result->num_rows > 0) {
+            // Obtener la fila del resultado
             $row = $result->fetch_assoc();
+            // Verificar la contraseña
             if (password_verify($contrasena, $row["contrasena"])) {
                 echo "Inicio de sesión exitoso";
                 // Iniciar sesión y redirigir al usuario a la página principal
                 session_start();
                 $_SESSION["email"] = $email;
-                header("Location: index.php");
+                header("Location: index.html");
                 exit();
             } else {
                 echo "Contraseña incorrecta";
