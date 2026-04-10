@@ -4,7 +4,7 @@ session_start();
 
 //verificar si el usuario ha iniciado sesión, si no, redirigir a la página de inicio de sesión
 if (!isset($_SESSION["correo"]) || !isset($_SESSION["contraseña"])) {
-    header("Location: iniciosesion.html");
+    header("Location: inicio-sesion.html");
     exit();
 }
 
