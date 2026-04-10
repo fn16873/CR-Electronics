@@ -1,3 +1,23 @@
+<?php
+
+session_start();
+
+//verificar si el usuario ha iniciado sesión, si no, redirigir a la página de inicio de sesión
+if (!isset($_SESSION["correo"]) || !isset($_SESSION["contraseña"])) {
+    header("Location: iniciosesion.html");
+    exit();
+}
+
+// conexión a la base de datos
+require_once "./config/connection.php";
+$connection = new DatabaseConnection();
+$conn = $connection->connect();
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,9 +46,24 @@
                     <th>E-mail</th>
                     <td id="correo"></td>
                 </tr>
+                <tr>
+                    <th>Contraseña</th>
+                    <td id="contraseña"></td>
+                </tr>
+                <tr>
+                    <th>Dirección</th>
+                    <td id="direccion"></td>
+                </tr>
+                <tr>
+                    <th>Teléfono</th>
+                    <td id="telefono"></td>
+                </tr>
             </table>
-            <h2>Editar Información</h2>
+            <button id="editar-info">Editar Información</button>
         </section>
     </thead>
+    <script>
+    </script>
+
 </body>
 </html>

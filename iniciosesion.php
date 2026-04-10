@@ -1,10 +1,6 @@
 <?php
-    // iniciosesion.php
-    header("Content-Type: application/json");
-    header("Access-Control-Allow-Origin: *");
-    // Permitir métodos POST y OPTIONS (para CORS)
-    header("Access-Control-Allow-Methods: POST, OPTIONS");
-    header("Access-Control-Allow-Headers: Content-Type");
+    require_once "./config/connection.php";
+    session_start();
 
     // Código para crear una nueva cuenta de usuario
     if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
