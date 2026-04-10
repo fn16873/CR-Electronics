@@ -13,10 +13,12 @@ require_once "./config/connection.php";
 $connection = new DatabaseConnection();
 $conn = $connection->connect();
 
-
+// Obtener lista de usuarios
+$sql = "SELECT nombre, correo, contrasena, direccion, telefono FROM usuario WHERE correo = ?";
+$stmt = $conn->prepare($sql);
+$stmt->execute([$_SESSION["correo"]]);
+$user = $stmt->fetch();
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="es">
