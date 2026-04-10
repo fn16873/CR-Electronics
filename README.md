@@ -1,3 +1,3 @@
 # CR-Electronics
 
-# Proyecto de programación 3
+Proyecto de programación 3
