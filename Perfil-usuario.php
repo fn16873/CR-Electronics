@@ -65,7 +65,11 @@ $user = $stmt->fetch();
         </section>
     </thead>
     <script>
+        document.getElementById("nombre").textContent = "<?php echo $user['nombre']; ?>";
+        document.getElementById("correo").textContent = "<?php echo $user['correo']; ?>";
+        document.getElementById("contraseña").textContent = "<?php echo $user['contrasena']; ?>";
+        document.getElementById("direccion").textContent = "<?php echo $user['direccion']; ?>";
+        document.getElementById("telefono").textContent = "<?php echo $user['telefono']; ?>";
     </script>
-
 </body>
 </html>

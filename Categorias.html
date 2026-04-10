@@ -11,23 +11,34 @@
     <script src="Boton-inicio.JS"></script>
     <header>
         <div class="menu">
-                <nav>
-                    <ul>
-                        <li><a href="./index.html">Inicio</a></li>
-                        <li><a href="./inicio-sesion.html">Iniciar sesion</a></li>
-                        <li><a href="#">Sobre nosotros</a></li>
-                    </ul>
-                </nav>
+            <!-- Botón hamburguesa -->
+            <button class="boton-menu" aria-label="Abrir menú" id="abrir">
+                <span class="linea"></span>
+                <span class="linea"></span>
+                <span class="linea"></span>
+            </button>
+            <!-- Navegación oculta/desplegable -->
+            <nav class="hamburguesa" id="hamburguesa">
+                <ul class="nav-menu">
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="Categorias.html">Categorías</a></li>
+                    <li><a href="inicio-sesion.html">Iniciar sesión</a></li>
+                    <li><a href="Perfil-usuario.php">Perfil</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                </ul>
+            </nav>
             <div>
-                <a href="./index.html"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
+                <div class="logo">
+                    <a href="./index.html"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
+                </div>
                 <div style="text-align: end;">
-                    <input type="search" id="buscar" placeholder="Buscar">
+                    <input class="buscar" type="search" id="buscar" placeholder="Buscar">
                 </div>
             </div>
         </div>
     </header>
     <div>
-    <h3>Marcas</h3>
+        <h3>Marcas</h3>
         <div>
             <table>
                 <tr>
@@ -73,8 +84,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/Intel-Logo-PNG.png" width="200"></a></td>
-                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/AMD-Logo.png" width="200"></a></td>
+                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/Intel-Logo-PNG.png"
+                                        width="200"></a></td>
+                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/AMD-Logo.png"
+                                        width="200"></a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -90,8 +103,10 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/Intel-Logo-PNG.png" width="200"></a></td>
-                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/AMD-Logo.png" width="200"></a></td>
+                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/Intel-Logo-PNG.png"
+                                        width="200"></a></td>
+                            <td><a href=""><img src="componentes PC/procesador-tarjeta madre/AMD-Logo.png"
+                                        width="200"></a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -142,7 +157,8 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><a href=""><img src="componentes PC/Fuente de poder/Fuente de poder.png" width="175"></a></td>
+                            <td><a href=""><img src="componentes PC/Fuente de poder/Fuente de poder.png"
+                                        width="175"></a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -160,7 +176,8 @@
                         <tr>
                             <td><a href=""><img src="componentes PC/Almacenamiento/HHD.png" width="170"></a></td>
                             <td><a href=""><img src="componentes PC/Almacenamiento/SSD.png" width="175"></a></td>
-                            <td><a href=""><img src="componentes PC/Almacenamiento/Memoria USB.png" width="150"></a></td>
+                            <td><a href=""><img src="componentes PC/Almacenamiento/Memoria USB.png" width="150"></a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -180,25 +197,27 @@
                         <td><a href=""><img src="componentes PC/Case-PC/cases-accessories.png" width="190"></a></td>
                     </tbody>
                 </table>
-            </div>    
+            </div>
             <!--Enfriamento-->
             <div>
                 <table>
 
                 </table>
-                </div>
-                <!--Monitores-->
-                <div>
-                    <table>
-                        
-                    </table>
-                </div>
+            </div>
+            <!--Monitores-->
+            <div>
+                <table>
+
+                </table>
             </div>
         </div>
+    </div>
     </div>
     <br>
     <footer>
         <p>&copy; 2026 CR Electronics. Todos los derechos reservados.</p>
     </footer>
+    
+    <script src="menu-hambur.js"></script>
 </body>
 </html>

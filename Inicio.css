@@ -24,26 +24,25 @@ image{
 }
 
 #btnTop {
-      display: none; /* oculto por defecto */
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 99;
-      font-size: 16px;
-      border: none;
-      outline: none;
-      background-color: black;
-      color: white;
-      cursor: pointer;
-      padding: 10px 15px;
-      border-radius: 5px;
-      transition: opacity 0.3s;
-    }
+    display: none; /* oculto por defecto */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: opacity 0.3s;
+}
 
-    #btnTop:hover {
-      background-color: #555;
-    }
-
+#btnTop:hover {
+    background-color: #555;
+}
 
 header{
     background-color: #1a2e40; 
@@ -63,6 +62,7 @@ header{
     border: none;
     background: transparent;
 }
+
 .boton-menu span {
     width: 25px;
     height: 3px;
@@ -71,17 +71,27 @@ header{
     display: block;
 }
 
+.boton-menu:hover {
+    background-color: #555;
+}
+
 /* Navegación hamburguesa */
 nav {
     opacity: 0;
     visibility: hidden;
+    position: fixed;
 
     background-color: #1a2e40;
     position: absolute;
-    top: 235px;
+    top: 237px;
     right: 8px;
+    width: 1433px;
+    display: flex;
+    justify-content: center;
+    box-shadow: black;
     border-bottom-left-radius: 10px;
-    width: 250px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 2px solid #333;
     padding: 2rem;
     transition: opacity 0.3s ease, visibility 0.3s ease;
 }
@@ -104,10 +114,10 @@ nav.active {
     text-decoration: none;
     font-size: 1.2rem;
 }
-.nav-menu a:hover {
-    color: #ddd;
-}
 
+.nav-menu a:hover {
+    color: #ffeaeab2;
+}
 
 a{
     text-decoration: none;

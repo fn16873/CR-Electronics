@@ -15,9 +15,24 @@ body {
     min-height: 100%;
 }
 
+.logo{
+    align-items: center;
+    margin-top: 1rem;
+}
+
 a{
     text-decoration: none;
     color: black;
+}
+
+.buscar{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    border: 2px solid #333;
+    border-radius: 1px;
+    padding: 10px;
+    background-color: white;
 }
 
 #btnTop {
@@ -61,39 +76,74 @@ header{
     text-align: center;
 }
 
-nav{
-    float: left;
+/* Botón hamburguesa */
+.boton-menu {
+    position: absolute;
+    top: 190px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: transparent;
 }
 
-nav ul li{
+.boton-menu span {
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background-color: #fff;
+    display: block;
+}
+
+.boton-menu:hover {
+    background-color: #555;
+}
+
+/* Navegación hamburguesa */
+nav {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+
+    background-color: #1a2e40;
+    position: absolute;
+    top: 237px;
+    right: 8px;
+    width: 1433px;
+    display: flex;
+    justify-content: center;
+    box-shadow: black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom: 2px solid #333;
+    padding: 2rem;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+nav.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Lista de enlaces */
+.nav-menu {
     list-style: none;
-    margin-left: 75px;
-    padding: 25px 0;
-    float: left;
-    position: relative;
-    top: 100px;  
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-nav ul li a{
+.nav-menu a {
+    color: #fff;
     text-decoration: none;
-    color: white;
-    font-weight: bold;
+    font-size: 1.2rem;
 }
 
-nav ul li a::before {
-    display:flow-root;
-    content: '' ;
-    width: 0%;
-    background:rgb(254, 254, 254);
-    height: 5px;
-    top: 50px;
-    position:absolute ;
-    transition: width 0.2s;
- 
-}
-
-nav ul li a:hover::before{
-    width: 100%;
+.nav-menu a:hover {
+    color: #ffeaeab2;
 }
 
 main {
