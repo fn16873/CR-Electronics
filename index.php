@@ -10,7 +10,11 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR Electronic</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="Style/Inicio.css">
+=======
+    <link rel="stylesheet" href="./Style/StryleInicio.css">
+>>>>>>> 00a67209b91279f3c5602784dd7cf2bd3bc1606f
 </head>
 
 <body>
