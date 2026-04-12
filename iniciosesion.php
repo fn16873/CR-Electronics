@@ -1,18 +1,13 @@
 <?php
+
     require_once "./config/connection.php";
     session_start();
 
     // Código para crear una nueva cuenta de usuario
-    if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
-        // Manejar la solicitud OPTIONS (para CORS)
-        exit(0);
-    } 
-    
-    //vincular a la base de datos
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "crelectronics";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $password = $_POST["password"];
+        $email = $_POST["email"];
+    }
 
     // Crear conexión a la base de datos
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -64,3 +59,38 @@
     $conn->close();
     
 ?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="inicio-sesion.css">
+</head>
+<body>
+    <!--Barra con solo la foto-->
+    <header>
+        <div class="logo">
+            <a href="./index.php"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
+        </div>
+    </header>
+    <section>
+    <div class="cuenta">
+            <h2>Iniciar sesión</h2>
+            <form action="iniciosesion.php" method="post">
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <label for=""></label>
+            <button type="submit">Iniciar sesión</button>
+        </form>
+        <p>¿No tienes una cuenta? <a href="./crear-cuenta.php">Regístrate aquí</a></p>
+    </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 CR Electronics. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

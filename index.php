@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -22,16 +26,16 @@
             <!-- Navegación oculta/desplegable -->
             <nav class="hamburguesa" id="hamburguesa">
                 <ul class="nav-menu">
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="Categorias.html">Categorías</a></li>
-                    <li><a href="inicio-sesion.html">Iniciar sesión</a></li>
-                    <li><a href="Perfil-usuario.php">Perfil</a></li>
+                    <li><a href="./index.php">Inicio</a></li>
+                    <li><a href="./Categorias.php">Categorías</a></li>
+                    <li><a href="./inicio-sesion.php">Iniciar sesión</a></li>
+                    <li><a href="./Perfil-usuario.php">Perfil</a></li>
                     <li><a href="#">Sobre nosotros</a></li>
                 </ul>
             </nav>
 
             <div class="logo">
-                <a href="./index.html"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
+                <a href="./index.php"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
             </div>
             <div style="text-align: end;">
                 <input class="buscar" type="search" id="buscar" placeholder="Buscar">
