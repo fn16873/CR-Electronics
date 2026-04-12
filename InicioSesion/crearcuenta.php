@@ -1,5 +1,5 @@
 <?php
-    require_once "./config/connection.php";
+    require_once "../config/connection.php";
 
     // Código para crear una nueva cuenta de usuario
     if ($_SERVER["REQUEST_METHOD"] == "OPTIONS") {
@@ -58,7 +58,7 @@
     // Ejecutar la consulta y verificar si se realizó correctamente
     if ($conn->query($sql) === TRUE) {
         echo json_encode(["message" => "Cuenta creada exitosamente"]);
-        header("Location: inicio-sesion.html"); // Redirigir al usuario a la página de inicio de sesión
+        header("Location: ../inicio-sesion.html"); // Redirigir al usuario a la página de inicio de sesión
         exit();
     } else {
         echo json_encode(["message" => "Error al crear la cuenta"]);

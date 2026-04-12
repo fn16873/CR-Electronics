@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./Style/style-Categorias.css">
 </head>
 <body>
-    <button id="btnTop">↑ Arriba</button>
+    <button id="btnTop">↑</button>
     <script src="./JS/Boton-inicio.JS"></script>
     <header>
         <div class="menu">

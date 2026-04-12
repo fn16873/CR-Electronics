@@ -1,6 +1,6 @@
 <?php
 
-    require_once "./config/connection.php";
+    require_once "../config/connection.php";
     session_start();
 
     // Código para crear una nueva cuenta de usuario
@@ -42,7 +42,7 @@
             // Iniciar sesión y redirigir al usuario a la página principal
             session_start();
             $_SESSION["correo"] = $email;
-            header("Location: index.php"); 
+            header("Location: ../index.php"); 
             exit();
         } else {
             echo "Contraseña incorrecta";
