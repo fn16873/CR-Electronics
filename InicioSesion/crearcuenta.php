@@ -35,8 +35,6 @@
         $direccion = trim($_POST["direccion"]);
     }
 
-
-
     //valida si los datos no están vacíos
     if (empty($nombre) || empty($apellido) || empty($email) || empty($contrasena) || empty($numero) || empty($direccion)) {
         echo "Todos los campos son obligatorios.";
@@ -65,7 +63,4 @@
     } else {
         echo json_encode(["message" => "Error al crear la cuenta"]);
     }
-
-    // Cerrar la conexión a la base de datos
-    $conn->close();
 ?>

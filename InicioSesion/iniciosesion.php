@@ -50,5 +50,4 @@
     } else {
         echo "El correo electrónico no está registrado";
     }
-    
 ?>
