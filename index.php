@@ -10,12 +10,12 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CR Electronic</title>
-    <link rel="stylesheet" href="./Inicio.css">
+    <link rel="stylesheet" href="./Style/StryleInicio.css">
 </head>
 
 <body>
     <button id="btnTop">↑</button>
-    <script src="./Boton-inicio.JS"></script>
+    <script src="./JS/Boton-inicio.JS"></script>
     <header>
         <div class="Barra">
             <!-- Botón hamburguesa -->
@@ -157,7 +157,7 @@ session_start();
         <p>&copy; 2026 CR Electronics. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="./menu-hambur.js"></script>
+    <script src="./JS/menu-hambur.js"></script>
 </body>
 
 </html>

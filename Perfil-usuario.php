@@ -26,7 +26,7 @@ $user = $stmt->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="perfil-usuario.css">
+    <link rel="stylesheet" href="./Style/perfil-usuario.css">
 </head>
 <body>
     <header>
