@@ -28,7 +28,7 @@ session_start();
                 <ul class="nav-menu">
                     <li><a href="./index.php">Inicio</a></li>
                     <li><a href="./Categorias.php">Categorías</a></li>
-                    <li><a href="./inicio-sesion.php">Iniciar sesión</a></li>
+                    <li><a href="./inicio-sesion.html">Iniciar sesión</a></li>
                     <li><a href="./Perfil-usuario.php">Perfil</a></li>
                     <li><a href="#">Sobre nosotros</a></li>
                 </ul>
