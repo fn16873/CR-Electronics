@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorias</title>
-    <link rel="stylesheet" href="style-Categorias.css">
+    <link rel="stylesheet" href="./Style/style-Categorias.css">
 </head>
 <body>
     <button id="btnTop">↑ Arriba</button>
-    <script src="Boton-inicio.JS"></script>
+    <script src="./JS/Boton-inicio.JS"></script>
     <header>
         <div class="menu">
             <!-- Botón hamburguesa -->
@@ -218,6 +218,6 @@
         <p>&copy; 2026 CR Electronics. Todos los derechos reservados.</p>
     </footer>
     
-    <script src="menu-hambur.js"></script>
+    <script src="./JS/menu-hambur.js"></script>
 </body>
 </html>
