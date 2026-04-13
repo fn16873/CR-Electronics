@@ -36,14 +36,25 @@
     //contraseña_verify para comparar la contraseña ingresada con la contraseña encriptada almacenada en la base de datos
     if ($stmt->rowCount() > 0) {
         // Verificar la contraseña
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        if (password_verify($contrasena, $row["contrasena"])) {
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        // Guardar información del usuario en la sesión
+        $_SESSION["correo"] = $email;
+        $_SESSION["rol"] = $user["rol"];
+        $_SESSION["id_usuario"] = $user["id_usuario"];
+        // Redirigir al usuario según su rol
+        if (password_verify($contrasena, $user["contrasena"])) {
             echo "Inicio de sesión exitoso";
-            // Iniciar sesión y redirigir al usuario a la página principal
-            session_start();
-            $_SESSION["correo"] = $email;
-            header("Location: ../index.php"); 
-            exit();
+            if ($user["rol"] == "Administrador") {
+                $_SESSION["rol"] = "Administrador";
+                $_SESSION["correo"] = $email;
+                header("Location: ../Admin/Administrador.php"); 
+                
+            } else {
+                $_SESSION["rol"] = "Cliente";
+                $_SESSION["correo"] = $email;
+                header("Location: ../index.php"); 
+
+            }
         } else {
             echo "Contraseña incorrecta";
         }

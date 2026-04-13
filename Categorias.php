@@ -29,7 +29,7 @@
             </nav>
             <div>
                 <div class="logo">
-                    <a href="./index.html"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
+                    <a href="./index.php"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
                 </div>
                 <div style="text-align: end;">
                     <input class="buscar" type="search" id="buscar" placeholder="Buscar">
