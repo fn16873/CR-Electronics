@@ -31,10 +31,8 @@ $sql = "SELECT
     GROUP_CONCAT(DISTINCT i.imagen_url) AS todas_imagen,
     GROUP_CONCAT(DISTINCT v.video_URL) AS todos_video
    FROM producto AS p
-   LEFT JOIN imagen_producto AS i ON 
-   p.id_producto=i.id_producto
-   LEFT JOIN video_producto AS v ON
-   p.id_producto=v.id_producto
+   LEFT JOIN imagen_producto AS i ON p.id_producto=i.id_producto
+   LEFT JOIN video_producto AS v ON p.id_producto = v.id_producto
    GROUP BY p.id_producto;";
 
 $stmt = $conn->query($sql);
@@ -107,8 +105,11 @@ $admin = $stmt->fetchAll(PDO::FETCH_ASSOC);
                         // Mostrar videos
                         $videos = explode(',', $producto['todos_video']);
                         foreach ($videos as $video) {
+                            if (strpos($video, 'watch?v=') !== false) {
+                                $video = str_replace('watch?v=', 'embed/', $video);
+                            }
                             if (!empty($video)) {
-                                echo '<video width="320" height="240" controls><source src="' . htmlspecialchars($video) . '" type="video/mp4">Tu navegador no soporta el elemento de video.</video>';
+                                echo '<iframe width="250" height="150" src="' . htmlspecialchars($video) . '" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
                             }
                         }
                         ?>

@@ -100,7 +100,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 900px;
+    max-width: 1100px;
 }
 
 /* estilo para las etiquetas y los campos de entrada del formulario */
@@ -135,11 +135,9 @@ header {
 }
 
 table {
-    width: 80%;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    position: relative;
-    left: 5rem;
 }
 
 table, th, td {
@@ -151,7 +149,11 @@ th, td {
     text-align: left;
 }
 
-th:nth-child(6), td:nth-child(6) { max-width: 150px; overflow-y: auto; max-height: 200px; display: block; }  /* Descripción */
+.descripcion td{ 
+    max-width: 100px;
+    max-height: 50px; 
+    overflow-x: auto; 
+}
 
 label {
     display: block;

@@ -105,7 +105,7 @@ try {
     }
 
     echo "Producto registrado exitosamente.";
-    header("Location: ../admin/Administrador.php");
+    header("Location: ../admin/AgregarProductos.php");
     exit();
 } catch(PDOException $e) {
     echo "Error al registrar el producto: " . $e->getMessage();
