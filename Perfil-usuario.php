@@ -3,7 +3,7 @@
 session_start();
 
 //verificar si el usuario ha iniciado sesión, si no, redirigir a la página de inicio de sesión
-if (!isset($_SESSION["correo"]) || !isset($_SESSION["contraseña"])) {
+if (!isset($_SESSION["correo"]) || $_SESSION["rol"] !== "Cliente") {
     header("Location: inicio-sesion.html");
     exit();
 }
@@ -17,7 +17,7 @@ $conn = $connection->connect();
 $sql = "SELECT nombre, correo, contrasena, direccion, telefono FROM usuario WHERE correo = ?";
 $stmt = $conn->prepare($sql);
 $stmt->execute([$_SESSION["correo"]]);
-$user = $stmt->fetch();
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -26,12 +26,12 @@ $user = $stmt->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil de Usuario</title>
-    <link rel="stylesheet" href="./Style/perfil-usuario.css">
+    <link rel="stylesheet" href="./Style/Perfil-usuario.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="./index.html"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
+            <a href="./index.php"><img src="logo-empresa/logo-empresa-blanco.png" width="150"></a>
         </div>
     </header>
     <thead>
