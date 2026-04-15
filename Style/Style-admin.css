@@ -55,27 +55,33 @@ body {
 }
 
 .Dashboard li:hover::before {
-    width: 100%;
+    width: 94%;
 }
 
 .Dashboard {
-    top: 12.1rem;
+    top: 0;
+    left: 0;
+    bottom: 0;
     align-items: center;
     position: fixed;
     background-color: #1a2e40;
-    padding: 40px;
+    padding: 14rem 20px 20px 20px;
     width: 18rem;
-    bottom: 0;
     text-align: center;
 }
 
 /*La seccion de los datos de la bd*/
+header,
+section {
+    margin-left: 18rem;
+    width: calc(100% - 18rem);
+}
+
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    min-height: 70vh;
     padding: 20px 0;
 }
 
@@ -83,8 +89,8 @@ section {
 header {
     background-color: #1a2e40; 
     text-align: center;
-    width: 100%;
     padding: 20px 0;
+    box-sizing: border-box;
 }
 
 /* estilo para el contenedor del registro */
@@ -144,6 +150,42 @@ th, td {
     padding: 15px;
     text-align: left;
 }
+
+th:nth-child(6), td:nth-child(6) { max-width: 150px; overflow-y: auto; max-height: 200px; display: block; }  /* Descripción */
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+option {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+h5 {
+    color: #333;
+    font-style: italic;
+}
+
 
 /* estilo para el pie de página */
 footer {
