@@ -14,6 +14,28 @@ if ($_SESSION["rol"] !== "Administrador") {
     header("Location: ../inicio-sesion.html");
     exit();
 }
+
+require_once '../config/connection.php';
+$db = new DatabaseConnection();
+$conn = $db->connect();
+
+// Consulta para obtener productos con imágenes y videos
+$sql = "SELECT
+	p.nombre,
+    p.marca,
+    GROUP_CONCAT(DISTINCT i.imagen_url) AS todas_imagen,
+    GROUP_CONCAT(DISTINCT v.video_URL) AS todos_video
+   FROM producto AS p
+   LEFT JOIN imagen_producto AS i ON 
+   p.id_producto=i.id_producto
+   LEFT JOIN video_producto AS v ON
+   p.id_producto=v.id_producto
+   GROUP BY p.id_producto;";
+
+$stmt = $conn->query($sql);
+$stmt->execute();
+$admin = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 <!DOCTYPE html>
@@ -44,15 +66,42 @@ if ($_SESSION["rol"] !== "Administrador") {
     </div>
     <section>
     <div class="admin">
-            <h2>Iniciar sesión</h2>
-            <form action="./InicioSesion/iniciosesion.php" method="post">
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required>
-            <label for=""></label>
-            <button type="submit">Iniciar sesión</button>
-        </form>
+            <h2>Lista de productos</h2>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Descripción</th>
+                    <th>Imágenes/Videos</th>
+                </tr>
+                <?php foreach ($admin as $producto): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($producto['id']); ?></td>
+                        <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
+                        <td><?php echo htmlspecialchars($producto['precio']); ?></td>
+                        <td><?php echo htmlspecialchars($producto['descripcion']); ?></td>
+                        <td>
+                            <?php 
+                            // Mostrar imágenes
+                            $imagenes = explode(',', $producto['todas_imagen']);
+                            foreach ($imagenes as $imagen) {
+                                if (!empty($imagen)) {
+                                    echo '<img src="' . htmlspecialchars($imagen) . '" alt="Imagen del producto" width="100">';
+                                }
+                            }
+                            // Mostrar videos
+                            $videos = explode(',', $producto['todos_video']);
+                            foreach ($videos as $video) {
+                                if (!empty($video)) {
+                                    echo '<video width="320" height="240" controls><source src="' . htmlspecialchars($video) . '" type="video/mp4">Tu navegador no soporta el elemento de video.</video>';
+                                }
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
         <p>¿No tienes una cuenta? <a href="./crear-cuenta.html">Regístrate aquí</a></p>
     </div>
 </body>
