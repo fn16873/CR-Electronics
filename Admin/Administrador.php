@@ -66,43 +66,50 @@ $admin = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </div>
     <section>
     <div class="admin">
-            <h2>Lista de productos</h2>
-            <table>
+        <h2>Lista de productos</h2>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Precio</th>
+                <th>Descripción</th>
+                <th>Imágenes</th>
+                <th>Videos</th>
+            </tr>
+            <?php foreach ($admin as $producto): ?>
                 <tr>
-                    <th>ID</th>
-                    <th>Nombre</th>
-                    <th>Precio</th>
-                    <th>Descripción</th>
-                    <th>Imágenes/Videos</th>
+                    <td><?php echo htmlspecialchars($producto['id']); ?></td>
+                    <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
+                    <td><?php echo htmlspecialchars($producto['marca']); ?></td>
+                    <td><?php echo htmlspecialchars($producto['precio']); ?></td>
+                    <td><?php echo htmlspecialchars($producto['descripcion']); ?></td>
+                    <td>
+                        <?php 
+                        // Mostrar imágenes
+                        $imagenes = explode(',', $producto['todas_imagen']);
+                        foreach ($imagenes as $imagen) {
+                            if (!empty($imagen)) {
+                                echo '<img src="' . htmlspecialchars($imagen) . '" alt="Imagen del producto" width="100">';
+                            }
+                        }
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        // Mostrar videos
+                        $videos = explode(',', $producto['todos_video']);
+                        foreach ($videos as $video) {
+                            if (!empty($video)) {
+                                echo '<video width="320" height="240" controls><source src="' . htmlspecialchars($video) . '" type="video/mp4">Tu navegador no soporta el elemento de video.</video>';
+                            }
+                        }
+                        ?>
+                    </td>
                 </tr>
-                <?php foreach ($admin as $producto): ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($producto['id']); ?></td>
-                        <td><?php echo htmlspecialchars($producto['nombre']); ?></td>
-                        <td><?php echo htmlspecialchars($producto['precio']); ?></td>
-                        <td><?php echo htmlspecialchars($producto['descripcion']); ?></td>
-                        <td>
-                            <?php 
-                            // Mostrar imágenes
-                            $imagenes = explode(',', $producto['todas_imagen']);
-                            foreach ($imagenes as $imagen) {
-                                if (!empty($imagen)) {
-                                    echo '<img src="' . htmlspecialchars($imagen) . '" alt="Imagen del producto" width="100">';
-                                }
-                            }
-                            // Mostrar videos
-                            $videos = explode(',', $producto['todos_video']);
-                            foreach ($videos as $video) {
-                                if (!empty($video)) {
-                                    echo '<video width="320" height="240" controls><source src="' . htmlspecialchars($video) . '" type="video/mp4">Tu navegador no soporta el elemento de video.</video>';
-                                }
-                            }
-                            ?>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </table>
-        <p>¿No tienes una cuenta? <a href="./crear-cuenta.html">Regístrate aquí</a></p>
+            <?php endforeach; ?>
+        </table>
     </div>
+    <script src="../JS/ajuste.js"></script>
 </body>
 </html>

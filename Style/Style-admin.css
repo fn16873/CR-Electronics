@@ -74,8 +74,9 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 70vh;
+    justify-content: flex-start;
+    min-height: 70vh;
+    padding: 20px 0;
 }
 
 /*Estilo para el ancabezado de la pagina*/
@@ -92,7 +93,8 @@ header {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 490px;
+    width: 100%;
+    max-width: 900px;
 }
 
 /* estilo para las etiquetas y los campos de entrada del formulario */
@@ -130,6 +132,8 @@ table {
     width: 80%;
     border-collapse: collapse;
     margin-top: 20px;
+    position: relative;
+    left: 5rem;
 }
 
 table, th, td {
@@ -137,7 +141,7 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    padding: 15px;
     text-align: left;
 }
 
